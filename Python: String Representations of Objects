@@ -1,0 +1,29 @@
+class Car:
+    def __init__(self, max_speed, unit):
+        self.max_speed = max_speed
+        self.unit = unit
+
+    def __str__(self):
+        return 'Car with the maximum speed of {} {}'.format(self.max_speed, self.unit)
+
+
+class Boat:
+    def __init__(self, max_speed):
+        self.max_speed = max_speed
+
+    def __str__(self):
+        return 'Boat with the maximum speed of {} knots'.format(self.max_speed)
+
+
+def process_input(input_lines):
+    vehicles = []
+    for line in input_lines:
+        parts = line.split()
+        vehicle_type = parts[0]
+        if vehicle_type == 'car':
+            max_speed = int(parts[1])
+            unit = parts[2]
+            car = Car(max_speed, unit)
+            vehicles.append(car)
+        elif vehicle_type == 'boat':
+            max_speed = int(parts[1])
