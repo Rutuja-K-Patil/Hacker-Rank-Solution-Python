@@ -23,6 +23,7 @@ def process_input(input_lines):
         if vehicle_type == 'car':
             max_speed = int(parts[1])
             unit = parts[2]
+
             car = Car(max_speed, unit)
             vehicles.append(car)
         elif vehicle_type == 'boat':
